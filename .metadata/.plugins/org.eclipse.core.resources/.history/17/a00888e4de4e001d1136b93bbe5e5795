@@ -1,0 +1,5 @@
+package com.databaseapplication;
+
+public interface CltRepository {
+
+}

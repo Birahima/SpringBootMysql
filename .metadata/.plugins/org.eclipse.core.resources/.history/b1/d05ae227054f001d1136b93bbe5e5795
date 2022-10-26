@@ -1,0 +1,39 @@
+package com.databaseapplication;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
+import net.bytebuddy.dynamic.scaffold.subclass.ConstructorStrategy.ForDefaultConstructor;
+
+@Service
+@SpringBootApplication
+@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
+@Component
+@ComponentScan
+public class DatabaseApplication implements CommandLineRunner{
+
+	
+    private CltRepository cltRepo;
+    @Autowired
+    public DefaultConstructor(CltRepository cltRepo) {
+    	this.cltRepo = cltRepo;
+    }
+	public static void main(String[] args) {
+		SpringApplication.run(DatabaseApplication.class, args);}
+	@Override
+	public void run(String... args) throws Exception {
+		List<CLT> Clt = cltRepo.findAll();
+		Clt.forEach(System.out :: println);
+	}
+}
+
+

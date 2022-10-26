@@ -1,0 +1,9 @@
+package com.databaseapplication;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CltRepository extends JpaRepository<CLT, Long>{
+	
+	
+
+}

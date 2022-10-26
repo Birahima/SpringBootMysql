@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter Un Produit</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+<body>
+    <div align="center">
+        <br />
+        <h1>Ajouter Un Produit</h1>
+        <br />
+        <div class="col-sm-3">
+            <from action="#" th:action="@{/saveProduit}" th:object="${produit}" method="post">
+                <div alight="left">
+                    <tr>
+                        <label class="form-label" >Code barre</label>
+                        <td>
+                            <input type="hidden" th:filed="*{id}" />
+                            <input type="text" th:field="*{codeb}" class="form-control" placeholder="Code barre" />
+                        </td>
+                    </tr>
+                </div>
+                <br />
+                
+                    <div alight="left">
+                        <tr>
+                            <label class="form-label" >Libele</label>
+                            <td> 
+                                <input type="hidden" th:filed="*{id}" /> 
+                                <input type="text" th:field="*{Libele}" class="from-control" placeholder="Libele" /></td>
+                        </tr>
+                    </div>
+                <br />
+                <div alight="left">
+                    <tr>
+                        <label class="from-label" >Quantite</label>
+                        <td><input type="text" th:field="*{quantite}" class="from-control" placeholder="Quantite" /></td>
+                    </tr>
+                </div>
+                <br />
+                <div alight="left">
+                    <tr>
+                        <label class="from-label" >Prix Unitaire</label>
+                        <td><input type="text" th:field="*{prix}" class="from-control" placeholder="Prix Unitaire" /></td>
+                    </tr> 
+                </div>
+                <br>
+                <tr>
+                    <td colspan="2"><button tyope="submit" class="btn btn-info">Enregistrer</button></td>
+                </tr>
+            </table>
+            </from>
+    </div>
+</body>
+</html>

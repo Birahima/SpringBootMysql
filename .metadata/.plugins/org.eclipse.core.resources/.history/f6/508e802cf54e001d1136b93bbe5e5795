@@ -1,0 +1,58 @@
+package com.databaseapplication;
+
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.stereotype.Service;
+
+@Entity
+@Table(name="Clt")
+public class CLT {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long IdClt;
+    private String NomClt;
+    private String PrnmClt;
+
+    public Long getIdClt() {
+
+        return IdClt;
+    }
+
+    public void setIdClt(Long idClt) {
+        IdClt = idClt;
+    }
+
+    public String getNomClt() {
+
+        return NomClt;
+    }
+
+    public void setNomClt(String nomClt) {
+        NomClt = nomClt;
+    }
+
+    public String getPrnmClt() {
+
+        return PrnmClt;
+    }
+
+    public void setPrnmClt(String prnmClt) {
+
+        PrnmClt = prnmClt;
+    }
+
+    @Override
+    public String toString() {
+        return "CLT{" +
+                "IdClt=" + IdClt +
+                ", NomClt='" + NomClt + '\'' +
+                ", PrnmClt='" + PrnmClt + '\'' +
+                '}';
+    }
+}
